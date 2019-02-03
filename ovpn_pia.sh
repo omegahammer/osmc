@@ -48,16 +48,11 @@ wait
     # start openvpn
 service openvpn start
 
-####################################################################
-# make wait longer and add echo "restarting ovpn_pia service"      #
-# also add a progress bar for wait                                 #
-#################################################################### 
-#                                                                  #
-wait                                                               #
-#                                                                  #
-####################################################################
-#                                                                  #
-####################################################################
+    # delay so every thing can get up and running 
+echo "Restarting openvpn service /w new configuration please wait"
+#maybe add status bar to delay?
+sleep 15s
+
     # get new ip and append to file /temp/ovpn_test.1
 curl ipinfo.io >> /tmp/ovpn_test_ip
 
